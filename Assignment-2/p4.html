@@ -1,0 +1,73 @@
+<!-- Create a Complex Form Layout with Nested Tables and Lists
+Write an HTML document that contains a form structured within a nested table layout. The form
+should include:
+1. A main table with two rows and two columns.
+2. The first row should have:
+○ A nested table in the first cell with three rows and two columns, including:
+■ Text input for the user's first name and last name.
+■ A select dropdown for the user's country.
+○ An unordered list in the second cell with at least three items.
+3. The second row should have:
+○ A text area for comments in the first cell.
+○ A submit button and a reset button in the second cell. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem 4</title>
+</head>
+<body>
+    <form action="">
+        <table border="1" cellspacing="0" cellpadding="10">
+            <tr>
+                <th>
+                    <table border="1" cellspacing="0" cellpadding="10">
+                        <tr>
+                            <th>
+                                <label for="fname">First name</label>
+                                <input type="text" id="fname" name="fname"><br><br>
+                                <label for="lname">Last name</label>
+                                <input type="text" id="lname" name="lname"><br><br>
+                                <label for="country">country</label>
+                                <select name="country" id="country">
+                                    <option value="india">India</option>
+                                    <option value="usa">usa</option>
+                                    <option value="uk">uk</option>
+                                    <option value="germany">germany</option>
+                                </select>
+                            </th>
+                            <th>
+                                <ul>
+                                    <li>item 1</li>
+                                    <li>item 2</li>
+                                    <li>item 3</li>
+                                </ul>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="comment">Comment</label>
+                                <textarea name="comment" id="comment"></textarea>
+                            </td>
+                            <td>
+                                <input type="submit">
+                                <input type="reset">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </th>
+                <th></th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

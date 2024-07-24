@@ -1,0 +1,39 @@
+<!-- Write an HTML document that contains a form structured within a table. The form
+should include:
+1. A table with two rows and two columns.
+2. The first row should contain a text input for the user's name and a text input for the
+user's email.
+3. The second row should contain a textarea for comments and a submit button. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem 3</title>
+</head>
+<body>
+    <form action="">
+        <table border="1" cellspacing="0" cellpadding="10">
+            <tr>
+                <th>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name">
+                </th>
+                <th>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <label for="comment">Comment</label><br>
+                    <textarea name="comment" id="comment"></textarea>
+                </td>
+                <td>
+                    <input type="submit" value="submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
