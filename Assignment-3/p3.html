@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem3</title>
+</head>
+<body>
+    <h1>Product Order Form</h1>
+    <form >
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username"><br><br>
+        <label for="email">Email*:</label>
+        <input type="email" name="email" id="email" required><br><br>
+        <label for="catagery">Select a product catagery:</label>
+        <select name="ProductCatagory" id="catagery">
+            <option value="no">Select your catagory</option>
+            <optgroup label="Electronics">
+                <option value="mobiles">Mobiles</option>
+                <option value="tablets">Tablets</option>
+                <option value="laptops">Laptops</option>
+            </optgroup>
+            <optgroup label="Books">
+                <option value="storybooks">Storybooks</option>
+                <option value="historybooks">Historybooks</option>
+                <option value="novels">Novels</option>
+            </optgroup>
+            <optgroup label="Clothes">
+                <option value="Men">men</option>
+                <option value="Women">women</option>
+                <option value="kids">Kids</option>
+            </optgroup> 
+        </select><br><br>
+        <label for="quantity">Quantity(1-10):</label>
+        <input type="number" min="1" max="10" name="quantity" id="quantity"><br><br>
+        <label for="deliverydate">Prefered Delivery Date:</label>
+        <input type="date" name="deliverydate" id="deliverydate" min="2024-07-26"><br><br>
+        <label for="deliverytime">Prefered Delivery Time:</label>
+        <input type="time" name="deliverytime" id="deliverytime" ><br><br>
+        <label for="additionalNotes">Additional Notes:</label>
+        <textarea name="additionalNotes" id="additionalNotes" rows="4" cols="15">Provide addiional information</textarea><br><br>
+        <label for="paymentOptions">Payment options:</label>
+        <input type="radio" name="payment" value="CreditCard" id="card">
+        <label for="card">CreditCard</label>
+        <input type="radio" name="payment" value="bankTransfer" id="bank">
+        <label for="bank">Bank Tranfer</label>
+        <input type="radio" name="payment" value="payPal" id="payPal">
+        <label for="payPal">Paypal</label><br><br>
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 1</title>
+</head>
+<body>
+    <h1>Comprehensive Registration Form</h1>
+    <form >
+        <label for="fullname">FUll Name:</label>
+        <input type="text" name="FullName" id="fullname"><br><br>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" maxlength="20"><br><br>
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" name="confirmPassword" id="confirmPassword" maxlength="20"><br><br>
+        <label for="dateOfBirth">Date Of Birth:</label>
+        <input type="date" name="date of birth" id="dateOfBirth"><br><br>
+        <label for="gender">Select Gender</label>
+        <select name="Gender" id="gender">
+            <option value="Select your gender">Select your gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="others">Others</option>
+        </select>
+        <p>Choose your Subcription Plan:</p>
+        <input type="radio" name="subcription" id="free" value="free">
+        <label for="free">Free</label>
+        <input type="radio" name="subcription" id="basic" value="basic">
+        <label for="basic">basic</label>
+        <input type="radio" name="subcription" id="premium" value="premium">
+        <label for="premium">premium</label>
+        <p>Choose your Hobbies:</p>
+        <input type="checkbox" name="Hobbie1" id="reading" value="reading">
+        <label for="reading">Reading</label>
+        <input type="checkbox" name="Hobbie2" id="playing" value="playing">
+        <label for="playing">Playing</label>
+        <input type="checkbox" name="Hobbie3" id="dancing" value="dancing">
+        <label for="dancing">Dancing</label><br><br>
+        <label for="profilePicture">Upload Profile Picture:</label>
+        <input type="file" name="profilePicture" accept=".jpg,.png"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

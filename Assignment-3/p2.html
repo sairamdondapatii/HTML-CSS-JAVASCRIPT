@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 2</title>
+</head>
+<body>
+    <h1>Detailed Feedback Form </h1>
+    <form >
+        <label for="username">Username*:</label>
+        <input type="text" name="username" id="username"><br><br>
+        <label for="email">Email*:</label>
+        <input type="email" name="email" id="email" required><br><br>
+        <label for="comment">Detailed comment:</label><br>
+        <textarea name="detailed-comment" id="comment" placeholder="enter your Feedback here"></textarea><br><br>
+        <label for="rate">Rate the service(0 to 10):</label>
+        <input type="range" name="rating" id="rate" min="0" max="10">
+        <p>Feedback type:</p>
+        <input type="radio" name="type" value="compliment" id="compliment">
+        <label for="compliment">Compliment</label><br>
+        <input type="radio" name="type" value="complaint" id="complaint">
+        <label for="complaint">Complaint</label><br>
+        <input type="radio" name="type" value="suggetion" id="suggetion">
+        <label for="suggetion">Suggetion</label><br><br>
+        <input type="checkbox" value="true" name="policy" required>Agree to<a href="@">Feedback policy T&C</a><br><br>
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>
