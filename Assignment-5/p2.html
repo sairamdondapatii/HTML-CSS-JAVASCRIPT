@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .main{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .rows{
+            padding-bottom: 30px;
+        }
+         h1{
+            text-align: center;
+           margin-bottom: 20px;
+         }
+        .calculator{
+            width: 300px;
+            box-shadow: 1px 2px 8px 2px rgb(228, 227, 227);
+        }
+        .result{
+            padding: 50px 30px 10px;
+        }
+        .result>input{
+            width:100%;
+            height: 50px;
+            border: none;
+            box-shadow: 1px 2px 10px 2px rgb(228, 227, 227);
+        }
+        .row{
+           margin: 5px 30px;
+          
+        }
+        .row>.values,.row>.symbols,.clear{
+            width: 57px;
+            height: 57px;
+            font-weight: 800;
+            font-size: 20px;
+            box-shadow: 1px 2px 10px 2px rgb(228, 227, 227);
+            border: none;
+            background-color: white;
+            border-radius: 8px;
+        }
+        .row>.symbols{
+            background-color: black;
+            color: white;
+        }
+        .clear{
+            background-color: red;
+            color: white;
+        }
+       
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Calculator</h1>
+        <div class="calculator">
+            <div class="result">
+                <input type="text">
+            </div>
+            <div class="rows">
+                <div class="row">
+                    <button class="values">1</button>
+                    <button class="values">2</button>
+                    <button class="values">3</button>
+                    <button class="symbols">+</button>
+                </div>
+                <div class="row">
+                    <button class="values">4</button>
+                    <button class="values">5</button>
+                    <button class="values">6</button>
+                    <button class="symbols">-</button>
+                </div>
+                <div class="row">
+                    <button class="values">7</button>
+                    <button class="values">8</button>
+                    <button class="values">9</button>
+                    <button class="symbols">*</button>
+                </div>
+                <div class="row">
+                    <button class="clear">C</button>
+                    <button class="values">0</button>
+                    <button class="symbols">=</button>
+                    <button class="symbols">/</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

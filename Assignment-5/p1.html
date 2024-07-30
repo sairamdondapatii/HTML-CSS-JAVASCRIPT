@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem 1</title>
+    <style>
+        .main-content{
+            width:1300px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .items{
+            width: 400px;
+            margin: 10px;
+        }
+        .items>img{
+            width:400px;
+            height:225px;
+        }
+        .items>h1{
+            height: 100px;
+        }
+        .items>h1, .items>p{
+            padding: 10px;
+        }
+        .items>p{
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgb(93, 93, 93);
+        }
+        .items>p::before{
+            content: '|';
+            font-size: 20px;
+           
+            font-weight: 500;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <div class="items">
+            <img src="https://ichef.bbci.co.uk/news/1024/branded_news/84E3/production/_121591043_gchqcheltenham.jpg" alt="">
+            <h1>uk us join force to strike back in cyber - space</h1>
+            <p>Technology</p>
+        </div>
+        <div class="items">
+            <img src="https://c.files.bbci.co.uk/A5B3/production/_121591424_gaga.jpg" alt="">
+            <h1>Lady gaga took personal trauma into gucci role</h1>
+            <p>Entertainment & Arts</p>
+        </div>
+        <div class="items">
+            <img src="https://ichef.bbci.co.uk/news/1024/cpsprodpb/25CD/production/_121577690_solidstartsamelia6months.jpg.webp" alt="">
+            <h1>The mums using Instagram to offer advice to new parents</h1>
+            <p>Business</p>
+        </div>
+        <div class="items">
+            <img src="https://placehold.co/600x400" alt="">
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+            <p>Lorem ipsum dolor sit.</p>
+        </div>
+        <div class="items">
+            <img src="https://placehold.co/600x400" alt="">
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+            <p>Lorem ipsum dolor sit.</p>
+        </div>
+        <div class="items">
+            <img src="https://placehold.co/600x400" alt="">
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+            <p>Lorem ipsum dolor sit.</p>
+        </div>
+    </div>
+</body>
+</html>
