@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        *{
+            margin: 0;
+        }
+        ::selection{
+            background-color: black;
+            color: #f2f6ff;
+        }
+        .main-container{
+            background-color: #f2f6ff;
+            width: 100%;
+        }
+        .main-container>h1{
+            text-align: center;
+            padding-top: 20px;
+        }
+        .main-container>.btn{
+            text-align: center;
+            padding: 20px;  
+        }
+        .btn>button{
+            background-color: transparent;
+            padding: 10px 20px;
+            outline: none;
+            border: 1px solid orangered;
+            border-radius: 10px;
+            color: orangered;
+        }
+        .sub-container{
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 30px;
+            justify-content: space-around;
+            max-width: 70%;
+            margin: auto;
+            padding: 30px;
+        }
+
+        .sub-containeers{
+           width: 300px;
+           border-radius: 20px;
+           background-color: #ffff;
+           box-shadow: 1px 2px 8px 3px rgb(241, 241, 241);
+        }
+        .sub-containeers>p:nth-of-type(1){
+            color: blue;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .sub-containeers>p{
+            color: gray;
+        }
+        .sub-containeers>p,.sub-containeers>h3{
+            padding: 10px;
+        }
+        .sub-containeers>img{
+            width: 100%;
+            height: 150px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        .container{
+            width: 100%;
+            
+        }
+        .investors{
+            padding: 30px;
+            width: 70%;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            row-gap: 30px;
+        }
+        .investors>div{
+            width: 300px;
+            border: 1px solid rgb(226, 225, 225);
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .investors>div>img{
+           width: 100%;
+           height: 100px;
+        }
+        .investors{
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+        .container>h1{
+            margin-top: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>Masai In The News</h1>
+        <div class="sub-container">
+            <div class="sub-containeers">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAz57xpknUvRi6k3Ww2izWmCzJHcsOmV9bwQ&s" alt="" >
+                <p>21 Dec 2021</p>
+                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, dolores.</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit tempora autem labore aliquam, quaerat quia.</p>
+            </div>
+            <div class="sub-containeers">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYTRzLea_0zPoz0O7aO_fsZNjo8V5g5FEEpA&s" alt="" >
+                <p>21 Dec 2021</p>
+                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, dolores.</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit tempora autem labore aliquam, quaerat quia.</p>
+            </div>
+            <div class="sub-containeers">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN9Qod2JH67jv7w0TUNqNA5OJVLkpi3mw6rw&s" alt="" >
+                <p>21 Dec 2021</p>
+                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, dolores.</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit tempora autem labore aliquam, quaerat quia.</p>
+            </div>
+        </div>
+        <div class="btn">
+            <button>SEE MORE</button>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Our Investors, Who Belive In Us</h1>
+        <div class="investors">
+            <div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Unitus_Logo.png" alt="">
+            </div>
+            <div>
+                <img src="https://data.org/wp-content/uploads/2022/05/omidyar-network-india-logo.png" alt="">
+            </div>
+            <div>
+                <img src="data:image/png;base64,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" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
