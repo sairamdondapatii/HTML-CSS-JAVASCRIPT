@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid{
+            display: grid;
+            width: 90%;
+            margin: auto;
+            grid-template-areas: 
+            "image image content content"
+            "footer footer footer footer"
+            ;
+        }
+        .image{
+            grid-area: image;
+            display: flex;
+            justify-content: center;
+            background-color: rgb(2, 2, 76);
+            padding: 40px;
+        }
+        .content{
+            grid-area: content;
+            display: flex;
+            justify-content: space-between;
+            background-color: dodgerblue;
+            color: white;
+            padding: 20px;
+        }
+        .footer{
+            grid-area: footer;
+            display: flex;
+            justify-content: space-between;
+            background-color: black;
+            color: white;
+            padding: 20px;
+        }
+        .footer>div>a{
+            color: white;
+        }
+        @media screen and (min-width:768px) and (max-width:1023px){
+            .grid{
+                grid-template-areas: 
+                "content content"
+                "image image"
+                "footer footer"
+                ;
+            }
+        }
+        @media screen and (max-width:767px){
+            .grid{
+                grid-template-areas: 
+                "footer "
+                "content "
+                "image "
+                ;
+            }
+            .content>div>p{
+                display: none;
+            }
+            .content{
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="grid">
+            <div class="image">
+                <img src="https://placehold.co/50x50" alt="" width="200px">
+            </div>
+            <div class="content">
+                <div class="shop">
+                    <h3>Shop</h3>
+                    <p>Gift cards</p>
+                    <p>Gift cards</p>
+                    <p>Gift cards</p>
+                    <p>Gift cards</p>
+                    <p>Gift cards</p>
+                    <p>Gift cards</p>
+                </div>
+                <div class="sell">
+                    <h3>Sell</h3>
+                    <p>sell</p>
+                    <p>sell</p>
+                    <p>sell</p>
+                    <p>sell</p>
+                </div>
+                <div class="about">
+                    <h3>About</h3>
+                    <p>Easy link</p>
+                    <p>Easy link</p>
+                    <p>Easy link</p>
+                    <p>Easy link</p>
+                    <p>Easy link</p>
+                    <p>Easy link</p>
+                    <p>Easy link</p>
+                    <p>Easy link</p>
+                </div>
+                <div class="shop">
+                    <h3>Shop</h3>
+                    <p>Gift cards</p>
+                    <p>Gift cards</p>
+                    <p>Gift cards</p>
+                    <p>Gift cards</p>
+                    <p>Gift cards</p>
+                    <p>Gift cards</p>
+                </div>
+            </div>
+            <div class="footer">
+                <div>
+                    <address>India | English(IN) | $(INR)</address>
+                </div>
+                <div>
+                    <span>&copy; 2024 Etsy, Inc.</span>
+                    <a href="">Terms of use</a>
+                    <a href="">privacy</a>
+                    <a href="">interest based adds</a>
+                    <a href="">localshops</a>
+                    <a href="">regions</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
