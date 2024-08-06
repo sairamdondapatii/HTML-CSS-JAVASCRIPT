@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+       <input type="number" placeholder="Enter first number" id="firstnum"> 
+       <input type="number" placeholder="Enter Second number" id="secondnum">
+    </div><br>
+    <div>
+        <button onclick="add()">Add</button>
+        <button onclick="subtract()">Subtract</button>
+        <button onclick="multiplication()">Multiplication</button>
+        <button onclick="division()">Division</button>
+    </div>
+    <p id="demo"></p>
+</body>
+</html>
+<script>
+    let fn = document.getElementById('firstnum');
+    let sn = document.getElementById('secondnum');
+    function add(){
+        alert(`Addition is: ${Number(fn.value) + Number(sn.value)}`);
+    }
+    function subtract(){
+        alert(`Subtraction is: ${Number(fn.value) - Number(sn.value)}`);
+    }
+    function multiplication(){
+        alert(`multiplication is: ${Number(fn.value) * Number(sn.value)}`);
+    }
+    function division(){
+        alert(`division is: ${Number(fn.value) / Number(sn.value)}`);
+    }
+</script>

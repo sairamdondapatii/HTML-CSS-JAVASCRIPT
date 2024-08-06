@@ -6,6 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    
+   <input type="text" placeholder="enter your age" id="input">
+   <button onclick="agecheck()">Check Eligibility</button>
+   <p id="text">enter your age and submit</p>
 </body>
 </html>
+<script>
+    function agecheck(){
+        let age=document.getElementById("input").value;
+        let text=document.getElementById("text");
+        age > 18 ? text.innerHTML='<h1>Eligible to vote</h1>' : age >= 18 ? text.innerText=' Just eligible to vote' : alert(' Not eligible to vote'); 
+    }
+</script>

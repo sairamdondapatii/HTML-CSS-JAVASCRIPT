@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="change()">Ring bell</button>
+    <br>
+    <img id="image" onclick="alertmsg()" src="https://cdn3d.iconscout.com/3d/premium/thumb/danger-sign-6624182-5576096.png?f=webp" alt="" width="200px" style="cursor: pointer;">
+</body>
+</html>
+<script>
+    function change(){
+        console.log('Please open the door');
+    };
+    function alertmsg(){
+        alert('The website you are going to visit may harm your computer, do you still want to redirect?')
+    }
+</script>
