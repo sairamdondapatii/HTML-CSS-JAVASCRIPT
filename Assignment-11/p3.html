@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="country" id="country">
+        <option value="India">India</option>
+        <option value="United States Of America">United States of America</option>
+        <option value="China">China</option>
+        <option value="Nepal">Nepal</option>
+        <option value="Australia">Australia</option>
+        <option value="France">France</option>
+        <option value="Germany">Germany</option>
+        <option value="South Africa">South Africa</option>
+        <option value="Nigeria">Nigeria</option>
+        <option value="Mexico">Mexico</option>
+        <option value="Argentina">Argentina</option>
+        <option value="Brazil">Brazil</option>
+        <option value="Canada">Canada</option>
+        <option value="Singapore">Singapore</option>
+        <option value="Sweden">Sweden</option>
+    </select>
+    <button> Find continent</button>
+</body>
+</html>
+<script>
+    let btn = document.querySelector('button');
+    btn.addEventListener('click',checkContinent);
+    let input=document.querySelector('select');
+    let continents = {
+        Asia:['India','China',"Nepal",'Singapoor'],
+        NorthAmerica:['United States Of America','Canada','Mexico'],
+        SouthAmerica:['Argentina','Brazil'],
+        Africa:['South Africa','Nigeria'],
+        Europe:['France','Germany','Sweden'],
+        Oceania:['Australia']
+    };
+    function checkContinent(){
+        for(let x in continents){
+            for(let i=0; i<continents[x].length;i++){
+                if(continents[x][i]==input.value)
+                alert(`The continent is ${x}`)
+            }
+        }
+    }
+    
+</script>
