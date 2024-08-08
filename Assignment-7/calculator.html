@@ -14,10 +14,17 @@
             box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
             padding: 30px;
         }
-        .result{
-            height: 60px;
+        #result{
+            height: 50px;
             box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            font-size: 50px;
+            padding: 10px;
+            font-weight: bold;
+            overflow: scroll;
         }
+        #result::-webkit-scrollbar {
+            display: none;
+        }       
         .buttons{
             display: grid;
             grid-template-columns: repeat(4,1fr);
@@ -42,16 +49,25 @@
             background-color: red;
             color: white;
         }
+        .clear:hover{
+            background-color: white;
+            color: red;
+        }
+        .symbols:hover{
+            background-color: white;
+            color: black;
+        }
         .buttons>div:hover{
             cursor: pointer;
             background-color: aliceblue;
         }
+        
     </style>
 </head>
 <body>
     <h1>CALCULATOR</h1>
     <div class="main">
-        <div class="result"></div>
+        <div id="result">0</div>
         <div class="buttons">
             <div>1</div>
             <div>2</div>
@@ -73,3 +89,27 @@
     </div>
 </body>
 </html>
+
+<script>
+    let keys=document.querySelectorAll('.buttons>div');
+    let result=document.getElementById('result');
+    keys.forEach(function(element){
+        element.addEventListener('click',caluclator)
+    });
+    let output='';
+    function caluclator(){
+        let value = event.target.innerText;
+        if(value=='AC'){
+            output=0;
+            result.innerText=output;
+            output='';
+        } else if(value=='='){
+            output=eval(output);
+            result.innerText=output;
+        } else{
+            output+=value;
+            result.innerText=output;
+        }
+        
+    }
+</script>
