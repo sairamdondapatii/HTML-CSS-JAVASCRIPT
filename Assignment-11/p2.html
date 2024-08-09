@@ -22,7 +22,7 @@
         {color:'blue',content:'Link',background:'white'}
     ];
 
-    btns.forEach(function(element){
+    btns.map(function(element){
         let btn=document.createElement('button');
         btn.innerText=element.content;
         btn.style.color=element.color;
