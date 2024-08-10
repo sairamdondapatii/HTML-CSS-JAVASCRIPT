@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 30%;
+            margin: auto;
+            padding: 30px;
+        }
+        input[type='number'],button{
+            width: 100%;
+            padding: 10px 0px;
+            font-size: 20px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        #result{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Check your BMI</h1>
+        <p>Enter Your weight and height below to check your BMI results</p>
+        <label for="weight">Put Your Weight in here (KG)</label>
+        <input type="number" id="weight"><br><br>
+        <label for="height">And Your height in here (M)</label>
+        <input type="number" id="height"><br><br>
+        <button>Calculate BMI</button>
+        <p id="result"></p>
+    </div>
+</body>
+</html>
+<script>
+    let weight = document.querySelector('#weight');
+    let height = document.querySelector('#height');
+    let btn = document.querySelector('button');
+    let result = document.querySelector('#result');
+    btn.addEventListener('click',checkBMI);
+
+    function checkBMI(){
+        let out = weight.value / (height.value * height.value);
+        if(out <= 18.4){
+            result.innerText=`Your BMI is ${(out).toFixed(2)} which means Your are UnderWeight`;
+        }
+        else if(out >= 18.5 && out <= 24.9){
+            result.innerText=`Your BMI is ${(out).toFixed(2)} which means Your are NormalWeight`;
+        } 
+        else if(out >= 25 && out <= 29.9){
+            result.innerText=`Your BMI is ${out.toFixed(2)} which means Your are OverWeight`;
+        }
+        else if(out >= 30){
+            result.innerText=`Your BMI is ${(out).toFixed(2)} which means Your are Obese`;
+        } 
+        else {
+            result.innerText='Enter your height and weight';
+        }
+    }
+</script>

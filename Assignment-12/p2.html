@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 30%;
+            margin: auto;
+        }
+        .top{
+            display: flex;
+            justify-content: space-between;
+        }
+        #min{
+            width: 130px;
+            height: 50px;
+            border: 3px solid black;
+            background-color: orangered;
+            color: black;
+        }
+        #max{
+            width: 130px;
+            height: 50px;
+            border: 3px solid black;
+            background-color: green;
+            color: black;
+        }
+        .mid{
+            text-align: center;
+            width: 200px;
+            margin: auto;
+        }
+        .div1,.div2{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #score{
+            width:200px;
+            height: 70px;
+            background-color: lightgray;
+            border: 2px solid black;
+            text-align: center;
+            margin: 10px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+        }
+        .btns{
+            margin-top: 0px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto;
+            width: 200px;
+            gap: 20px;
+            margin: auto;
+        }
+        .zero{
+           grid-row: 4 / 5;
+           grid-column: 2 / 3;
+        }
+        .btns>div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            height: 50px;
+        }
+        .bottem{
+            margin-top: 25px;
+            width: 100%;
+        }
+        .bottem>button{
+            width: 100%;
+            padding: 10px;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top">
+            <div class="div1">
+                <div id="min"></div>
+                <h2>MIN</h2>
+            </div>
+            <div class="div2">
+                <div id="max"></div>
+                <h2>MAX</h2>
+            </div>
+        </div>
+        <div class="mid">
+            <h2>SCORE</h2>
+            <div id="score"></div>
+            <div class="btns">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div class="zero">0</div>
+            </div>
+            <div class="bottem">
+                <button>ENTER</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let btns = document.querySelectorAll('.btns>div');
+
+    btns.forEach(function(ele){
+        ele.addEventListener('click',Score);
+    });
+
+    let minValue = document.querySelector('#min');
+    let maxValue = document.querySelector('#max');
+    let score = document.querySelector('#score');
+    function Score(){
+        let value= Number(event.target.innerText);
+        score.innerText=score.innerText+value;
+    }
+
+    let enter = document.querySelector('button');
+    enter.addEventListener('click',update);
+
+    minValue.innerText = 43;
+    maxValue.innerText = 2019;
+    
+    function update(){
+        Minfu();
+        Maxfu();
+       score.innerText='';
+    }
+
+    function Minfu(){
+        if(Number(score.innerText) <= minValue.innerText){
+            minValue.innerText=score.innerText;
+            
+        }
+        
+    }
+    function Maxfu(){
+        if(Number(score.innerText) >= maxValue.innerText){
+            maxValue.innerText=score.innerText;
+            
+        }
+    }
+   
+</script>
