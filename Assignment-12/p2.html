@@ -61,13 +61,21 @@
         .zero{
            grid-row: 4 / 5;
            grid-column: 2 / 3;
+           background-color: violet;
         }
         .btns>div{
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 2px solid black;
+            border: 1px solid black;
             height: 50px;
+            font-size: 20px;
+        }
+        .btns>div:nth-of-type(even):not(.zero){
+            background-color: orange;
+        }
+        .btns>div:nth-of-type(odd){
+            background-color: lightseagreen;
         }
         .bottem{
             margin-top: 25px;
