@@ -103,10 +103,10 @@
             output=0;
             result.innerText=output;
             output='';
-        } else if(value=='='){
+        } else if(value=='=' && output!=''){
             output=eval(output);
             result.innerText=output;
-        } else{
+        } else if(value!=='=' && value!=='AC'){
             output+=value;
             result.innerText=output;
         }
