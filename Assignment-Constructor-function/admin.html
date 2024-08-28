@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <table>
+            <tr>
+                <td><label for="name">Product name:-</label></td>
+                <td><input type="text" name="productName" id="name"></td>
+            </tr>
+            <tr>
+                <td><label for="category">Category:-</label></td>
+                <td><input type="text" name="category" id="category"></td>
+            </tr>
+            <tr>
+                <td><label for="imageUrl">Image Url:-</label></td>
+                <td><input type="url" name="imageUrl" id="imageUrl"></td>
+            </tr>
+            <tr>
+                <td><label for="price">Price:-</label></td>
+                <td><input type="number" name="price" id="price"></td>
+            </tr>
+            <tr>
+                <td><label for="gender">Gender:-</label></td>
+                <td>
+                    <select name="gender" id="gender">
+                        <option value="null">select  gender</option>
+                        <option value="male">male</option>
+                        <option value="female">female</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="sold">Sold:-</label></td>
+                <td>
+                    <select name="sold" id="sold">
+                        <option value="false">No</option>
+                        <option value="true">Yes</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit"  id="add"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+<script>
+    let form = document.querySelector('#form');
+    let productName=document.querySelector('#name');
+    let category = document.querySelector('#category');
+    let imageUrl = document.querySelector('#imageUrl');
+    let price = document.querySelector('#price');
+    let gender = document.querySelector('#gender');
+    let sold = document.querySelector('#sold');
+   
+
+    let products;
+    if(localStorage.getItem('products')){
+        products = JSON.parse(localStorage.getItem('products'));
+    }else{
+        products=[];
+    }
+
+    form.addEventListener('submit',()=>{
+        event.preventDefault();
+        let updateProducts = new addProducts(productName.value,category.value,imageUrl.value,price.value,gender.value,sold.value);
+        products.push(updateProducts);
+        localStorage.setItem('products',JSON.stringify(products));
+        window.location.href='products.html';
+        
+    })
+
+
+    function addProducts(productName,category,imageUrl,price,gender,sold){
+        this.productName=productName;
+        this.category=category;
+        this.imageUrl=imageUrl;
+        this.price=price;
+        this.gender=gender;
+        this.sold=sold;
+    }
+
+    
+
+</script>

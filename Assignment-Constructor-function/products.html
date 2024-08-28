@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .product>img{
+            width: 100%;
+            height: 250px;
+            padding-bottom: 20px;
+        }
+        .product{
+            padding: 20px;
+            text-align: center;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        #grid{
+            display: grid;
+            width: 80%;
+            margin: auto;
+            gap: 30px;
+            grid-template-columns: repeat(4,1fr);
+        }
+        .btns{
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+        }
+        .btns>button{
+            padding: 7px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="totalProducts"></div>
+        <div id="grid">
+
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let products = JSON.parse(localStorage.getItem('products'));
+    // console.log(products)
+    let totalProducts = document.createElement('h1');
+    totalProducts.innerText=`Total products : ${products.length}`
+    document.querySelector('#totalProducts').append(totalProducts)
+    
+    
+    
+    
+    products.forEach((element,inde) => {
+        let gridItem = document.createElement('div');
+        gridItem.className = 'product';
+        let img = document.createElement('img');
+        img.src = element.imageUrl;
+        let h1 = document.createElement('h1');
+        h1.innerText = element.productName;
+        let h2 = document.createElement('h2');
+        h2.innerText = element.category;
+        let p = document.createElement('p');
+        p.innerHTML = element.price;
+        let btns = document.createElement('div');
+        btns.className='btns';
+        let btn1 = document.createElement('button');
+        btn1.id='remove';
+        btn1.innerText = 'Remove';
+        btn1.addEventListener('click', function(){
+            removeItem(element,inde)
+        })
+
+
+
+       
+        let btn2 = document.createElement('button');
+        btn2.id='sold';
+        btn2.innerText = 'Sold';
+        btn2.addEventListener('click',function(){
+            changeSold(element);
+        })
+
+        if(element.sold==='true'){
+            btn2.style.backgroundColor='red';
+        } else{
+            btn2.style.backgroundColor='green';
+            btn2.style.color='white';
+        }
+        
+        
+
+
+        
+        btns.append(btn1,btn2);
+        gridItem.append(img,h1,h2,p,btns);
+        document.querySelector('#grid').append(gridItem);
+    });
+    
+    function removeItem(element,index){
+        products.splice(index,1);
+        localStorage.setItem('products',JSON.stringify(products));
+        window.location.reload()
+    }
+
+    function changeSold(ele){
+        if(ele.sold=='true'){
+            ele.sold='false';
+            localStorage.setItem('products',JSON.stringify(products));
+            window.location.reload();
+        } else{
+            ele.sold='true';
+            localStorage.setItem('products',JSON.stringify(products));
+            window.location.reload();
+            console.log(products)
+        }
+    }
+    
+</script>
