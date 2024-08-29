@@ -37,12 +37,38 @@
             border-radius: 10px;
             cursor: pointer;
         }
+        #totalProducts{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            position: sticky;
+            top: 0;
+           padding: 20px;
+        }
+        input[type='text'],select{
+            padding: 10px;
+            font-size: 20px;
+            border-radius: 20px;
+        }
 
     </style>
 </head>
 <body>
     <div id="container">
-        <div id="totalProducts"></div>
+        <div id="totalProducts">
+            <div id="search-box">
+                <input type="text"  id="search" placeholder="Search products" onkeyup="filterProducts()">
+            </div>
+            <div id="searchBy">
+                <select  id="searchByName" onchange="searchByName()">
+                    <option value="a">Search by name</option>
+                    <option value="a-z">A-Z</option>
+                    <option value="z-a">Z-A</option>
+                </select>
+            </div>
+        </div>
+       
         <div id="grid">
 
         </div>
@@ -53,13 +79,14 @@
     let products = JSON.parse(localStorage.getItem('products'));
     // console.log(products)
     let totalProducts = document.createElement('h1');
+    totalProducts.id='sumProducts'
     totalProducts.innerText=`Total products : ${products.length}`
     document.querySelector('#totalProducts').append(totalProducts)
-    
-    
-    
-    
-    products.forEach((element,inde) => {
+    updateData(products);
+
+    function updateData(products){
+        document.querySelector('#grid').innerHTML='';
+        products.forEach((element,inde) => {
         let gridItem = document.createElement('div');
         gridItem.className = 'product';
         let img = document.createElement('img');
@@ -78,32 +105,23 @@
         btn1.addEventListener('click', function(){
             removeItem(element,inde)
         })
-
-
-
-       
         let btn2 = document.createElement('button');
         btn2.id='sold';
         btn2.innerText = 'Sold';
         btn2.addEventListener('click',function(){
             changeSold(element);
         })
-
         if(element.sold==='true'){
             btn2.style.backgroundColor='red';
         } else{
             btn2.style.backgroundColor='green';
             btn2.style.color='white';
         }
-        
-        
-
-
-        
         btns.append(btn1,btn2);
         gridItem.append(img,h1,h2,p,btns);
         document.querySelector('#grid').append(gridItem);
     });
+    }
     
     function removeItem(element,index){
         products.splice(index,1);
@@ -123,5 +141,64 @@
             console.log(products)
         }
     }
+
+
+   function filterProducts(){
+   let inputValue = document.querySelector('#search').value;
+   let filterArr = products.filter(function(a){
+        return a.productName.toLowerCase().includes(inputValue.toLowerCase());
+    })
+    let totalProducts = document.querySelector('#sumProducts');
+    totalProducts.innerText=`Total products : ${filterArr.length}`
+    if(filterArr[0]){
+        updateData(filterArr);
+    }else{
+        document.querySelector('#grid').innerHTML='';
+        let h1 = document.createElement('h1');
+        h1.style.textAlign='center'
+        h1.innerText = `no products found with '${inputValue}' try different ...`
+        
+        document.querySelector('#grid').append(h1)
+    }
+   };
+
+
+
+   function searchByName(){
+   let selectedValue = document.getElementById('searchByName').value;
+   if(selectedValue ==='a-z'){
+    let sortedData = products.toSorted((a,b)=>{
+        let x = a.productName.toUpperCase();
+        let y = b.productName.toUpperCase();
+
+        if (x > y) {
+          return 1;
+        }
+        if (x < y) {
+          return -1;
+        }
+        return 0;
+    })
+    updateData(sortedData)
+   }
+   else if(selectedValue ==='z-a'){
+    let sortedData = products.toSorted((a,b)=>{
+        let x = a.productName.toUpperCase();
+        let y = b.productName.toUpperCase();
+
+        if (x > y) {
+          return -1;
+        }
+        if (x < y) {
+          return 1;
+        }
+        return 0;
+    })
+    updateData(sortedData)
+   }
+   else{
+    updateData(products)
+   }
+   }
     
 </script>
