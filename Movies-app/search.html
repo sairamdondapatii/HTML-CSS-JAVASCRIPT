@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>movies search</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+<body>
+     <!-- nav bar -->
+     <div id="nav-bar">
+        <nav id="nav">
+            <div id="nav-logo">
+                <img src="./images/—Pngtree—movie board icon_4751062.png" alt="" width="50px">
+            </div>
+            <div id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="#">Movies</a>
+                <a href="#">Series</a>
+                <a href="#">Shows</a>
+            </div>
+            <div id="nav-search">
+                <div id="search-box">
+                    <input type="search" id="input" placeholder="Search Title or Movie" style="visibility: visible;" oninput="getMovies()">
+                    <span class="material-symbols-outlined" id="search">
+                        search
+                    </span>
+                </div>
+                <button>Subscribe now</button>
+                <a href="#">Sign in</a>
+            </div>
+        </nav>
+    </div>
+    <div id="search-movies-container">
+        <h1 style="padding-top: 80px;">Popular Searches</h1>
+        <div id="trending-movies" style="flex-wrap: wrap;">
+            
+        </div>
+    </div>
+</body>
+</html>
+<script src="script.js"></script>
+</script>
