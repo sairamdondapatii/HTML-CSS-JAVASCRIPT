@@ -23,9 +23,6 @@ body{
     align-items: center;
     justify-content: space-evenly;
 }
-#nav-logo{
-    
-}
 #nav-links,#nav-search{
     display: flex;
     align-items: center;
