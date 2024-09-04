@@ -1,5 +1,5 @@
 // curosel
-let images = ["./images/1.jpg","./images/2.jpg","./images/3.jpg","./images/4.jpg","./images/5.jpg"];
+let images = ["./images/1.jpg","./images/2.jpg","./images/3.jpg","./images/4.jpg","./images/5.jpg","./images/6.jpg"];
     let i = 0;
 
     function right(){
@@ -279,26 +279,3 @@ search.addEventListener('click',()=>{
     window.location.href = './search.html'
     console.log('clickedS')
 })
-
-
-async function getMovies(){
-    try {
-        let query = document.querySelector('#input').value;
-        let response = await fetch(`https://www.omdbapi.com/?apikey=96030101&s=${query}`);
-        let Data= await response.json();
-        let data2 = Data.Search
-        document.querySelector('#search-movies-container>h1').innerText=`Showing Results For '${query}'`;
-        // console.log(data2);
-        if(data2){
-           trendingMoviesUpdate(data2)
-        }else{
-            trendingMoviesList.innerHTML=null;
-            let p= document.createElement('p');
-            p.innerHTML=`no movie name found with ${query} try different movies`;
-            trendingMoviesList.append(p)
-        }
-
-    } catch (error) {
-        console.log(error)
-    }
-}

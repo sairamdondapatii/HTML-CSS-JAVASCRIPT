@@ -22,13 +22,11 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    
 }
 #nav-logo{
-    width: 10%;
+    
 }
 #nav-links,#nav-search{
-    width: 45%;
     display: flex;
     align-items: center;
     gap: 50px;
@@ -77,8 +75,7 @@ body{
 }
 .container>img{
     width: 100%;
-    height: 500px; 
-   
+    height: 100%;
 }
 #left{
     position: absolute;
