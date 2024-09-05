@@ -113,6 +113,7 @@ body{
     height: 240px;
     overflow-y: hidden;
     text-align: center;
+    transition: 0.6s ease-out;
 }
 #grid-items>img{
     width: 100%;
@@ -122,5 +123,8 @@ body{
 #grid-items:hover{
     transform: translateY(-13px);
     cursor: pointer;
+}
+#movies-container>h1{
+    padding-top: 30px;
 }
 

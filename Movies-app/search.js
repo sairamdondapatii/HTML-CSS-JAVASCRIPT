@@ -1,7 +1,5 @@
-
+// searching movies by name 
 let trendingMoviesList = document.querySelector('#trending-movies');
-
-
 async function getMovies(){
     try {
         let query = document.querySelector('#input').value;
