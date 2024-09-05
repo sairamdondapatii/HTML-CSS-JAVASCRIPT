@@ -1,0 +1,64 @@
+body{
+    background-color: #121212;
+}
+#main{
+    width: 80%;
+    margin: auto;
+}
+#search-box{
+    display: flex;
+    margin-bottom: 10px;
+    position: sticky;
+    top: 0;
+}
+#search-box>input{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 15px;
+    font-size: 25px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+#search-box>button{
+    padding: 15px 20px;
+    border: none;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: darkcyan;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+#btns{
+    display: inline-flex;
+    background-color: #2e2e2e;
+    border-radius: 25px;
+}
+#btns>button{
+    padding: 10px 30px;
+    border-radius: 25px;
+    color: white;
+    letter-spacing: 2px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+#giphyStickersBtns{
+    text-align: right;
+    margin-bottom: 10px;
+}
+#trending{
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    gap: 10px;
+}
+#trending>img{
+    border-radius: 10px;
+    width: 100%;
+    height: 200px;
+    background-color: rgb(0,0,0,0.1);
+}
