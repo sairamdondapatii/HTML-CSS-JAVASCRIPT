@@ -1,13 +1,18 @@
 let videoContent = document.querySelector('#video-content');
 
 function video(){
-    let videoId = JSON.parse(localStorage.getItem('videoId'));
+    let data = JSON.parse(localStorage.getItem('data'));
     let iframe = document.createElement("iframe");
-    iframe.src = `https://www.youtube.com/embed/${videoId}`;
-    iframe.width = "560";
-    iframe.height = "315";
+    iframe.src = `https://www.youtube.com/embed/${data.videoId}`;
+    
     iframe.setAttribute("allowfullscreen", true);
-    videoContent.append(iframe);
+    let title = document.createElement('h4');
+    title.innerText = data.snippet.title;
+    let channelTitle = document.createElement('p');
+    channelTitle.innerText = data.snippet.channelTitle; 
+    let description = document .createElement('p');
+    description.innerText =  data.snippet.description;
+    videoContent.append(iframe,title,channelTitle,description);
 }
 
 video();
