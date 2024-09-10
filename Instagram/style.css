@@ -1,0 +1,16 @@
+
+#navbar{
+    display:flex;
+    width: 500px;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+}
+#posts{
+    width: 500px;
+    margin: auto;
+}
+#posts>div>img{
+    width: 100%;
+    max-height: 400px;
+}
