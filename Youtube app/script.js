@@ -2,7 +2,7 @@ let api_key = 'AIzaSyCTwY_zfywZodj77BG2HCwpBiP2RyN2p1c';
     async function getData() {
         let query = document.getElementById('search').value;
         try {
-            let response = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&type=video&maxResults=20&key=${api_key}`);
+            let response = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&type=video&maxResults=50&key=${api_key}`);
             let data = await response.json();
             console.log(data.items);
             updateDataToDom(data.items);
