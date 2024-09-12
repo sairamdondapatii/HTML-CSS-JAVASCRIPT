@@ -9,20 +9,20 @@
 </head>
 <body>
      <!-- nav bar -->
-     <div id="nav-bar">
+     <div id="nav-bar" style="position: sticky;">
         <nav id="nav">
             <div id="nav-logo">
                 <img src="./images/logo.png" alt="" width="50px">
             </div>
-            <div id="nav-links">
+            <div id="nav-links" style="display: flex;">
                 <a href="index.html">Home</a>
                 <a href="#">Movies</a>
                 <a href="#">Series</a>
                 <a href="#">Shows</a>
             </div>
-            <div id="nav-search">
-                <div id="search-box">
-                    <input type="search" id="input" placeholder="Search Title or Movie" style="visibility: visible;" oninput="getMovies()">
+            <div id="nav-search" style="display: flex;">
+                <div id="search-box" >
+                    <input type="search" id="input" placeholder="Search Title or Movie" style="display: block; width: 100%; transition: width linear 1s;" oninput="getMovies()">
                     <span class="material-symbols-outlined" id="search">
                         search
                     </span>

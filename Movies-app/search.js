@@ -29,6 +29,9 @@ function trendingMoviesUpdate(data){
         Title.innerText = `${ele.Title}(${ele.Year})`;
         let div1 = document.createElement('div');
         div1.id = 'grid-items';
+        div1.onclick = ()=>{
+            window.location.href = './video.html'
+        }
         div1.append(img,Title);
         trendingMoviesList.append(div1)
     }) 

@@ -259,14 +259,37 @@ function MoviesUpdate(data,movieList){
         Title.innerText = `${ele.Title}(${ele.Year})`;
         let div1 = document.createElement('div');
         div1.id = 'grid-items';
+        div1.onclick = ()=>{
+            window.location.href='./video.html'
+        }
         div1.append(img,Title);
         movieList.append(div1)
     }) 
 }
 let search = document.getElementById('search');
 search.addEventListener('click',()=>{
-    let input =document.querySelector('#search-box>input');
-    input.style.visibility='visible';
     window.location.href = './search.html'
     console.log('clicked')
 })
+
+let menu = document.getElementById('menu');
+menu.onclick= ()=>{
+    changeIcon()
+    let navLinks = document.getElementById('nav-links');
+    let navSearch = document.getElementById('nav-search');
+    navLinks.onclick = ()=>{
+        navLinks.classList.toggle('active');
+        navSearch.classList.toggle('active');
+        changeIcon()
+    }
+    navLinks.classList.toggle('active')
+    navSearch.classList.toggle('active')
+}
+
+const changeIcon = ()=>{
+    if(menu.innerText=='menu'){
+        menu.innerText='close';
+    }else{
+        menu.innerText='menu'
+    }
+}

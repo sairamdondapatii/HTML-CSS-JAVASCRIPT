@@ -13,6 +13,7 @@ body{
 /* nav bar  */
 #nav-bar{
     position: fixed;
+    top: 0;
     padding: 15px;
     width: 100%;
     z-index: 3;
@@ -40,7 +41,8 @@ body{
 }
 #search-box>input{
     border-radius: 15px;
-    visibility: hidden;
+    width: 0;
+    display: none;
     border: 2px solid rgb(222, 115, 9);
     outline: none;
     background: transparent;
@@ -48,7 +50,6 @@ body{
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     padding: 10px 10px;
     font-size: 20px;
-    transition: visibility 0.6s,opacity 0.6s ;
 }
 #search-box>span{
     color: white;
@@ -109,7 +110,7 @@ body{
   
 #grid-items{
     min-width: 150px;
-    max-width: 160px;
+    max-width: 150px;
     height: 240px;
     overflow-y: hidden;
     text-align: center;
@@ -127,4 +128,89 @@ body{
 #movies-container>h1{
     padding-top: 30px;
 }
+#myVideo{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+}
+#video{
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#video div{
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1000px;
+    background-color: rgba(0, 0, 0, 0.45);
+}
 
+
+/* CSS */
+
+.button-34 {
+margin-top: 30px;
+  background: #F46714;
+  border-radius: 999px;
+  box-shadow: #F46714 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
+#menu{
+    display: none;
+}
+@media screen and (max-width:768px){
+    #menu{
+        display: block;
+        position: absolute;
+        left: 5%;
+        top: 25px;
+        font-size: 38px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    #nav{
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+    #search-box{
+       gap:40px;
+    }
+    #nav-search{
+        flex-direction: column;
+    }
+    #nav-search>button,#nav-search>a{
+        display: none;
+    }
+    #container>img{
+        height: 300px;
+    }
+    /* #trending-movies{
+        justify-content: center;
+    } */
+    #nav-links,#nav-search{
+        display: none;
+    }
+    #nav-links.active,#nav-search.active{
+        display: flex;
+    }
+}
